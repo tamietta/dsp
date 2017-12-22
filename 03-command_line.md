@@ -20,7 +20,19 @@ Here's a list of items with which you should be familiar:
 
 Make a cheat sheet for yourself: a list of at least **ten** commands and what they do.  (Use the 8 items above and add a couple of your own.)  
 
-> > REPLACE THIS TEXT WITH YOUR RESPONSE
+| Command            | Function                                            |
+| --------------     | --------------------------------------------        |
+| `pwd`              | show current working directory path                 |
+| `mkdir <dir>`      | creating a directory                                |
+| `rm -r <dir>`      | deleting a directory and its contents               |
+| `touch <file>`     | creating a file using `touch` command               |
+| `rm <file>`        | deleting a file                                     |
+| `mv <old-name> <new-name> ` | renaming a file                            |
+| `ls -a <path/to/dir>`       | listing hidden files                       |
+| `cp <original-path/to/file> <new-path/to/file>` | copying a file from one directory to another |
+| `echo <text> > <file>`      | write \<text\> to file                     |
+| `grep '<pattern>' <file>`   | output lines containing \<patter\> to file |
+| `man <command>`   | show documentation for command                       |
 
 ---
 
@@ -35,7 +47,15 @@ What do the following commands do:
 `ls -t`  
 `ls -Glp`  
 
-> > REPLACE THIS TEXT WITH YOUR RESPONSE
+| Command            | Function                                         |
+| --------------     | --------------------------------------------     |
+| `ls`               | List all files/directories in current directory  |
+| `ls -a`            | List all hidden and non-hidden files/directories |
+| `ls -l      `      | List in long format                              |
+| `ls -lh`           | List in long format with file-size units         |
+| `ls -lah`          | List hidden/non-hidden in long format with file-size units |
+| `ls -t `           | List sorted by time modified                     |
+| `ls -Glp`          | List with colours, in long format, with '/' after directories   |
 
 ---
 
@@ -43,7 +63,11 @@ What do the following commands do:
 
 Explore these other [ls options](http://www.techonthenet.com/unix/basic/ls.php) and pick 5 of your favorites:
 
-> > REPLACE THIS TEXT WITH YOUR RESPONSE
+1. `ls -a` - hidden files
+2. `ls -p` - append '/' to directories
+3. `ls -l` - long format
+4. `ls -R` - recursive subdirectories
+5. `ls -t` - order by last modified
 
 ---
 
@@ -51,7 +75,12 @@ Explore these other [ls options](http://www.techonthenet.com/unix/basic/ls.php) 
 
 What does `xargs` do? Give an example of how to use it.
 
-> > REPLACE THIS TEXT WITH YOUR RESPONSE
+Takes a string from STDIN, and converts it to space-separated arguments to the given command.
 
+**Example**
+
+```bash
+find . -name "*.pyc" | xargs rm -rf
+```
  
-
+The command above finds all files in the current directory with the extension, `.pyc`, pipes `|` the output as STDIN to `xargs` to convert as arguments to 'rm -rf'.
